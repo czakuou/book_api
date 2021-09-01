@@ -33,7 +33,7 @@ def test_read_books():
 def test_read_books_sorted():
     response = client.get('/books?sort=-')
     body = {
-          "titles": [
+        "titles": [
             "The Hobbit",
             "I Am in Fact a Hobbit",
             "Hobbit czyli Tam i z powrotem",
@@ -43,8 +43,8 @@ def test_read_books_sorted():
             "A Hobbit Devotional",
             "Hobbit",
             "LEGO The Hobbit"
-          ]
-        }
+        ]
+    }
     assert response.status_code == 200
     assert response.json() == body
 
@@ -52,10 +52,10 @@ def test_read_books_sorted():
 def test_read_books_published_date():
     response = client.get('/books?published_date=2004')
     body = {
-          "titles": [
+        "titles": [
             "Hobbit czyli Tam i z powrotem"
-          ]
-        }
+        ]
+    }
     assert response.status_code == 200
     assert response.json() == body
 
@@ -63,7 +63,7 @@ def test_read_books_published_date():
 def test_read_books_published_date_invalid():
     response = client.get('/books?published_date=000')
     body = {
-      "titles": []
+        "titles": []
     }
     assert response.status_code == 200
     assert response.json() == body
@@ -72,20 +72,20 @@ def test_read_books_published_date_invalid():
 def test_read_booksID():
     response = client.get('books/YyXoAAAACAAJ')
     body = {
-          "title": "Hobbit czyli Tam i z powrotem",
-          "authors": [
+        "title": "Hobbit czyli Tam i z powrotem",
+        "authors": [
             "J. R. R. Tolkien"
-          ],
-          "publishedDate": "2004",
-          "categories": [
+        ],
+        "publishedDate": "2004",
+        "categories": [
             "Baggins, Bilbo (Fictitious character)"
-          ],
-          "averageRating": 5,
-          "ratingsCount": 3,
-          "imageLinks": {
+        ],
+        "averageRating": 5,
+        "ratingsCount": 3,
+        "imageLinks": {
             "thumbnail": "http://books.google.com/books/content?id=YyXoAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-          }
         }
+    }
     assert response.status_code == 200
     assert response.json() == body
 
@@ -98,7 +98,7 @@ def test_db_post():
 def test_books_list_after_update():
     response = client.get('/books')
     body = {
-          "titles": [
+        "titles": [
             "Hobbit czyli Tam i z powrotem",
             "Hobbit",
             "LEGO The Hobbit",
@@ -118,9 +118,8 @@ def test_books_list_after_update():
             "The War in Vietnam",
             "Report to the Membership of the Wisconsin War Fund",
             "Preventive medicine in World War II. 1969 v. 9"
-          ]
-        }
-
+        ]
+    }
 
 
 def main():

@@ -4,6 +4,7 @@ def parse_list(names: list) -> list:
     string can be in format
     ["\"name\", \"name2"\"]
     """
+
     def remove_prefix(text: str, prefix: str):
         return text[text.startswith(prefix) and len(prefix):]
 
@@ -21,6 +22,3 @@ def parse_list(names: list) -> list:
     names = [remove_postfix(n.strip(), "\"") for n in names]
 
     return names
-
-
-
