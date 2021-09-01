@@ -131,6 +131,7 @@ def main():
     test_read_books_published_date()
     test_read_books_published_date_invalid()
     test_db_post()
+    test_books_list_after_update()
 
 
 if __name__ == '__main__':
