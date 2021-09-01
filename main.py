@@ -8,7 +8,7 @@ from database import Database
 
 app = FastAPI()
 db = Database.create()
-
+print(Database.create_data_view())
 
 @app.get('/books')
 async def books(published_date: Optional[int] = None,
@@ -18,7 +18,7 @@ async def books(published_date: Optional[int] = None,
     books_list = None
 
     if sort is not None:
-        books_list = [k for k, v in sorted(db_view.items(), key=lambda item: item[1]['date'])]
+        books_list = [k for k, _ in sorted(db_view.items(), key=lambda item: item[1]['date'])]
 
     if published_date is not None:
         books_list = [k for k, v in db_view.items()
@@ -28,8 +28,7 @@ async def books(published_date: Optional[int] = None,
         author = parse_list(author)
         books_list = [k for k, v in db_view.items()
                       for search_aut in author
-                      for db_aut in v['authors']
-                      if search_aut == db_aut]
+                      if search_aut in v['authors']]
 
     if books_list is None:
         books_list = [k for k, v in db_view.items()]
