@@ -13,7 +13,8 @@ print(Database.create_data_view())
 
 @app.get('/')
 async def home():
-    return 'write https://stormy-island-09227.herokuapp.com/docs to test app'
+    return 'write https://stormy-island-09227.herokuapp.com/docs to test app' \
+           'and see documentation'
 
 
 @app.get('/books')
