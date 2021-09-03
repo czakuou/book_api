@@ -11,13 +11,13 @@ db = Database.create()
 
 
 @app.get('/')
-async def home():
+def home():
     return 'write https://stormy-island-09227.herokuapp.com/docs to test app' \
            'and see documentation'
 
 
 @app.get('/books')
-async def books(published_date: Optional[int] = None,
+def books(published_date: Optional[int] = None,
                 sort: Optional[Any] = None,
                 author: Optional[list[str]] = Query(None)):
     db_view = Database.create_data_view()
@@ -43,7 +43,7 @@ async def books(published_date: Optional[int] = None,
 
 
 @app.get('/books/{bookid}', response_model=BookByID)
-async def books_byID(bookid: str):
+def books_byID(bookid: str):
     for item in db['items']:
         if bookid == item['id']:
             return item['volumeInfo']
@@ -51,7 +51,7 @@ async def books_byID(bookid: str):
 
 
 @app.post('/db')
-async def update_database(data: Optional[Data]):
+def update_database(data: Optional[Data]):
     try:
         Database.fetch_json_data(data.q)
         return 'Data updated successfully'
