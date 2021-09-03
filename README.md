@@ -6,7 +6,7 @@ $ git clone https://github.com/czakuou/book_api
 $ unicorn main:app --reload
 ```
 ## Bugs
-App seems to not work properly after hosting on `Heroku` but works fine on local machine (photos below)
+App seems to not run properly after hosting on `Heroku` but works fine on local machine (photos below)
 ```
 1. Published date always return empty list
 2. Author search returs bad results
