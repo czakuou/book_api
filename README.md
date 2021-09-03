@@ -12,6 +12,13 @@ App seems to not run properly after hosting on `Heroku` but works fine on local 
 2. Author search returs bad results
 3. ID search return Internal Server Error
 ```
+## What I've learned
+1. FastAPI framework
+2. How to make API (I've known what It is and how It works but never made one before)
+3. It's the first time when I could use Singleton in my project
+4. How to deplay on Heroku
+5. The fact that the API works locally does not mean that it will work after deployment (It's something i will have to debug in free time)
+
 ## Photos of working app on local machine
 ![.](/img/home.png)
 ![.](/img/books.png)
@@ -28,4 +35,5 @@ App seems to not run properly after hosting on `Heroku` but works fine on local 
 # url/books/db
 ![.](/img/db_update.png)
 ![.](/img/data_after_update.png)
+
 
