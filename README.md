@@ -3,7 +3,7 @@
 ## How to run app on local machine
 ```
 $ git clone https://github.com/czakuou/book_api
-$ unicorn main:app --reload
+$ uvicorn main:app --reload
 ```
 ## Bugs
 App seems to not run properly after hosting on `Heroku` but works fine on local machine (photos below)
