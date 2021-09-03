@@ -41,7 +41,11 @@ class Database:
                 date = datetime.strptime(cls.db['items'][i]['volumeInfo']['publishedDate'], '%Y-%M-%d')
                 date = date.year
             except ValueError:
-                date = cls.db['items'][i]['volumeInfo']['publishedDate']
+                try:
+                    date = datetime.strptime(cls.db['items'][i]['volumeInfo']['publishedDate'], '%Y-%M')
+                    date = date.year
+                except ValueError:
+                    date = cls.db['items'][i]['volumeInfo']['publishedDate']
             try:
                 title = cls.db['items'][i]['volumeInfo']['title']
                 authors = cls.db['items'][i]['volumeInfo']['authors']
