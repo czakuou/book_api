@@ -12,7 +12,7 @@ db = Database.create()
 
 @app.get('/')
 def home():
-    return 'write https://stormy-island-09227.herokuapp.com/docs to test app' \
+    return 'write https://book-api-e.herokuapp.com//docs to test app ' \
            'and see documentation'
 
 
