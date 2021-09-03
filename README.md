@@ -17,7 +17,7 @@ App seems to not run properly after hosting on `Heroku` but works fine on local 
 ![.](/img/books.png)
 # url/books
 ![.](/img/books_work.png)
-# url/books?published=
+# url/books?published_date=
 ![.](/img/books_date.png)
 # url/books?author=
 ![.](/img/books_author.png)
