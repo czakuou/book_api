@@ -72,4 +72,4 @@ class Database:
                     "authors": None
                 }
 
-        return dict(view)
+        return view
