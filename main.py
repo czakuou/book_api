@@ -10,6 +10,12 @@ app = FastAPI()
 db = Database.create()
 print(Database.create_data_view())
 
+
+@app.get('/')
+async def home():
+    return 'write https://stormy-island-09227.herokuapp.com/docs to test app'
+
+
 @app.get('/books')
 async def books(published_date: Optional[int] = None,
                 sort: Optional[Any] = None,
