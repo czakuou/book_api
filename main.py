@@ -8,7 +8,6 @@ from database import Database
 
 app = FastAPI()
 db = Database.create()
-print(Database.create_data_view())
 
 
 @app.get('/')
