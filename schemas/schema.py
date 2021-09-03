@@ -1,3 +1,7 @@
+"""
+Schemas for API
+"""
+
 from typing import Optional, List
 
 from pydantic import BaseModel

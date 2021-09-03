@@ -10,6 +10,19 @@ class SingletonValidation(Exception):
 
 
 class Database:
+    """
+    Pseudo Database class
+    TODO: add method that creates JSON file on first usage and update it
+    TODO: if already exists
+
+    :create: create Database if doesn't exists
+    :fetch_json_data: download data to database
+    :create_data_view: creates view from data
+        view[title] = {
+            "date": int(date),
+            "authors": None
+        }
+    """
     db = None
 
     @classmethod
